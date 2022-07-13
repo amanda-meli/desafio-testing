@@ -4,7 +4,7 @@ import lombok.*;
 
 import javax.validation.constraints.*;
 
-
+@NoArgsConstructor
 public class Room {
 
     @Getter
@@ -43,14 +43,8 @@ public class Room {
         this.squareMeter = getWidth() * getLength();
     }
 
-    public Room(String roomName, double width, double length, int id) {
+    public Room(int id, String roomName, double width, double length) {
         this.id = id;
-        this.roomName = roomName;
-        this.width = width;
-        setLength(length);
-    }
-
-    public Room(String roomName, double width, double length) {
         this.roomName = roomName;
         this.width = width;
         setLength(length);
