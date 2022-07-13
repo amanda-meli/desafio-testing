@@ -11,5 +11,5 @@ public class District {
     //Adicionar as validações
 
     private String name;
-    private String valuePerSquareMeter;
+    private double valuePerSquareMeter;
 }
