@@ -8,7 +8,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
-import java.util.List;
 
 @Data
 //Casa
@@ -24,12 +23,14 @@ public class Immobile {
     private ArrayList<Room> listOfRooms;
     private double totalValue;
     private double totalArea;
+    private Room maxRoom;
 
     public Immobile(String name, District district, ArrayList<Room> listOfRooms) {
         this.propName = name;
         this.district = district;
         this.listOfRooms = listOfRooms;
         defineTotalValue();
+        setMaxRoom();
     }
 
     private void defineTotalValue() {
@@ -43,6 +44,17 @@ public class Immobile {
         //definindo o valor total da casa, é a quantidade de metro quadrados
         this.setTotalValue( totalSquareMeter * district.getValuePerSquareMeter() );
         this.totalArea = totalSquareMeter;
+    }
+
+    private void setMaxRoom() {
+        double currentMaxRoom = 0;
+
+        for (Room r : this.listOfRooms) {
+            if (r.getSquareMeter() > currentMaxRoom) {
+                this.setMaxRoom(r);
+                currentMaxRoom = r.getSquareMeter();
+            }
+        }
     }
 
 }
