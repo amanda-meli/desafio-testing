@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Data
@@ -11,14 +14,17 @@ import java.util.List;
 public class Immobile {
     //Adicionar as validações
 
-
-    private String name;
+    @NotBlank(message = "Nome do imovel obrigatorio")
+    @Pattern(regexp = "([AZ]|[0-9])[\\s|[0-9]|AZ|az|ñ|ó|í|á|é|ú|Á|Ó|É| Í|Ú]*$",
+            message = "Nome do imovel deve começar com a letra maiuscula")
+    @Size(max = 30, message = "O comprimento do nome do imovel não pode exceder 30 caracteres")
+    private String propName;
     private District district;
     private List<Room> listOfRooms;
     private double totalValue;
 
     public Immobile(String name, District district, List<Room> listOfRooms) {
-        this.name = name;
+        this.propName = name;
         this.district = district;
         this.listOfRooms = listOfRooms;
         defineTotalValue();
