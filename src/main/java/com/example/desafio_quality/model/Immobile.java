@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -20,10 +21,11 @@ public class Immobile {
     @Size(max = 30, message = "O comprimento do nome do imóvel não pode exceder 30 caracteres.")
     private String propName;
     private District district;
-    private List<Room> listOfRooms;
+    private ArrayList<Room> listOfRooms;
     private double totalValue;
+    private double totalArea;
 
-    public Immobile(String name, District district, List<Room> listOfRooms) {
+    public Immobile(String name, District district, ArrayList<Room> listOfRooms) {
         this.propName = name;
         this.district = district;
         this.listOfRooms = listOfRooms;
@@ -38,9 +40,9 @@ public class Immobile {
             totalSquareMeter += r.getSquareMeter();
         }
 
-        //dfinindo o valor total da casa, é a quantidade de metro quadrados
+        //definindo o valor total da casa, é a quantidade de metro quadrados
         this.setTotalValue( totalSquareMeter * district.getValuePerSquareMeter() );
-
+        this.totalArea = totalSquareMeter;
     }
 
 }

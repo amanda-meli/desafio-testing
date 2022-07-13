@@ -7,13 +7,6 @@ import javax.validation.constraints.*;
 
 public class Room {
 
-    public Room(int id, String roomName, double width, double length) {
-        this.id = id;
-        this.roomName = roomName;
-        this.width = width;
-        setLength(length);
-    }
-
     @Getter
     @Setter
     private int id;
@@ -48,6 +41,19 @@ public class Room {
         this.length = length;
 
         this.squareMeter = getWidth() * getLength();
+    }
+
+    public Room(String roomName, double width, double length, int id) {
+        this.id = id;
+        this.roomName = roomName;
+        this.width = width;
+        setLength(length);
+    }
+
+    public Room(String roomName, double width, double length) {
+        this.roomName = roomName;
+        this.width = width;
+        setLength(length);
     }
 
 }

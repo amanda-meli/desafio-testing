@@ -1,10 +1,9 @@
 package com.example.desafio_quality.service;
 
-public interface IServiceImmobile {
-    //Estou colocando void porque ainda n sei o retorno
+import com.example.desafio_quality.dto.ImmobileDTO;
+import com.example.desafio_quality.model.Immobile;
 
-    void CalculateSquareMeter();
-    void CalculateTotalPrice();
-    void CalculateBiggestRoom();
-    void CalculateAllRoom();
+public interface IServiceImmobile {
+
+    Immobile calculateValues(ImmobileDTO immobileDTO);
 }
