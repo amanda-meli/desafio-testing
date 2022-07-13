@@ -19,20 +19,20 @@ public class Room {
     private int id;
 
     @Getter
-    @NotBlank(message = "Nome do comodo obrigatorio")
+    @NotBlank(message = "O nome do comodo é obrigatorio")
     @Pattern(regexp = "([AZ]|[0-9])[\\s|[0-9]|AZ|az|ñ|ó|í|á|é|ú|Á|Ó|É| Í|Ú]*$",
-            message = "Nome do comodo deve começar com a letra maiuscula")
-    @Size(max = 30, message = "O comprimento do nome do comodo não pode exceder 30 caracteres")
+            message = "O nome do comodo deve começar com letra maiúscula.")
+    @Size(max = 30, message = "O comprimento do nome do comodo não pode exceder 30 caracteres.")
     private String roomName;
 
     @Getter
-    @NotBlank(message = "Campo largura obrigatorio")
-    @Max(value = 25, message = "Largura maxima permitida de 25 metros")
+    @NotBlank(message = "Campo largura é obrigatório")
+    @Max(value = 25, message = "Largura máxima permitida de 25 metros.")
     private double width;
 
     @Getter
     @NotBlank
-    @Max(value = 33, message = "Comprimento maxima permitida de 33 metros")
+    @Max(value = 33, message = "Comprimento máximo permitida de 33 metros.")
     private double length;
 
     @Getter

@@ -14,10 +14,10 @@ import java.util.List;
 public class Immobile {
     //Adicionar as validações
 
-    @NotBlank(message = "Nome do imovel obrigatorio")
+    @NotBlank(message = "O nome do imóvel é obrigatório.")
     @Pattern(regexp = "([AZ]|[0-9])[\\s|[0-9]|AZ|az|ñ|ó|í|á|é|ú|Á|Ó|É| Í|Ú]*$",
-            message = "Nome do imovel deve começar com a letra maiuscula")
-    @Size(max = 30, message = "O comprimento do nome do imovel não pode exceder 30 caracteres")
+            message = "O nome do imóvel deve começar com letra maiúscula.")
+    @Size(max = 30, message = "O comprimento do nome do imóvel não pode exceder 30 caracteres.")
     private String propName;
     private District district;
     private List<Room> listOfRooms;
