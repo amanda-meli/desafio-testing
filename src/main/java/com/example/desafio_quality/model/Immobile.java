@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -20,7 +21,7 @@ public class Immobile {
     @Size(max = 30, message = "O comprimento do nome do imóvel não pode exceder 30 caracteres.")
     private String propName;
     private District district;
-    private ArrayList<Room> listOfRooms;
+    private ArrayList<@Valid Room> listOfRooms;
     private double totalValue;
     private double totalArea;
     private Room maxRoom;
