@@ -1,15 +1,13 @@
 package com.example.desafio_quality.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
-@NoArgsConstructor
 public class District {
     //Adicionar as validações
 

@@ -40,13 +40,21 @@ class RoomTest {
     @Test
     void getId() {
         room = new Room(0, "Quarto", 2, 2);
-        Assertions.assertEquals(room.getId(), 0);
+        int idTest = room.getId();
+        Assertions.assertEquals(room.getId(), idTest);
     }
 
     @Test
     void getRoomName() {
         room = new Room(0, "Quarto", 2, 2);
         Assertions.assertEquals(room.getRoomName(), "Quarto");
+    }
+
+    @Test
+    void setRoomName() {
+        room = new Room(0, "Quarto", 2, 2);
+        room.setRoomName("New Name");
+        Assertions.assertEquals(room.getRoomName(), "New Name");
     }
 
     @Test
@@ -72,4 +80,5 @@ class RoomTest {
         room = new Room();
         Assertions.assertEquals(room.getId(), 0);
     }
+
 }
