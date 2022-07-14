@@ -24,24 +24,14 @@ class ServiceImmobileTest {
 
     @BeforeEach
     public void beforeEach() {
-        MockitoAnnotations.initMocks(this);
-        this.service = new ServiceImmobile();
+        BDDMockito.when(repo.getByName(ArgumentMatchers.any(String.class)))
+                .thenReturn(ImmobileDtoMock.getByName("Bairro1"));
     }
 
     @Test
     void calculateValues() {
-
         ImmobileDtoMock mock = new ImmobileDtoMock();
-
-        BDDMockito.when(repo.getByName(ArgumentMatchers.any(String.class)))
-                .thenReturn(ImmobileDtoMock.getByName("Bairro1"));
-
-      Immobile immobile = service.calculateValues(mock.getImmobileDTO());
-
-       service.calculateValues(mock.getImmobileDTO());
-
-
-
+        Immobile immobile = service.calculateValues(mock.getImmobileDTO());
 
     }
 }
