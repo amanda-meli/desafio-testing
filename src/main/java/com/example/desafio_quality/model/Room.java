@@ -13,10 +13,10 @@ public class Room {
 
     @Getter
     @Setter
-    @NotBlank(message = "O nome do comodo é obrigatorio")
+    @NotBlank(message = "O nome do cômodo é obrigatorio")
     @Pattern(regexp = "([AZ]|[0-9])[\\s|[0-9]|AZ|az|ñ|ó|í|á|é|ú|Á|Ó|É| Í|Ú]*$",
-            message = "O nome do comodo deve começar com letra maiúscula.")
-    @Size(max = 30, message = "O comprimento do nome do comodo não pode exceder 30 caracteres.")
+            message = "O nome do cômodo deve começar com letra maiúscula.")
+    @Size(max = 30, message = "O comprimento do nome do cômodo não pode exceder 30 caracteres.")
     private String roomName;
 
     @Getter

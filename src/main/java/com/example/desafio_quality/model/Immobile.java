@@ -1,5 +1,6 @@
 package com.example.desafio_quality.model;
 
+import com.example.desafio_quality.exception.RoomNotFoundException;
 import lombok.*;
 
 import javax.validation.Valid;
@@ -48,6 +49,16 @@ public class Immobile {
         this.listOfRooms = listOfRooms;
         defineTotalValue();
         setMaxRoom();
+    }
+
+    public Room getTotalValuePerRoom(String roomName) {
+        for (Room r : listOfRooms) {
+            if (r.getRoomName().equals(roomName)) {
+                return r;
+            }
+        }
+
+        throw new RoomNotFoundException("Esse cômodo não foi encontrado.");
     }
 
     private void defineTotalValue() {

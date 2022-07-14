@@ -1,5 +1,6 @@
 package com.example.desafio_quality.mock;
 
+import com.example.desafio_quality.dto.ImmobileDTO;
 import com.example.desafio_quality.model.District;
 
 import java.util.HashMap;
@@ -20,7 +21,6 @@ public class DistrictRepoMock {
         allDistricts.put(districtLaura.getDistrictName(), districtLaura);
         allDistricts.put(districtSavio.getDistrictName(), districtSavio);
         allDistricts.put(districtMatheus.getDistrictName(), districtMatheus);
-
     }
 
     public District getByName(String name){

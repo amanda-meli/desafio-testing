@@ -1,12 +1,16 @@
 package com.example.desafio_quality.model;
 
 
+import com.example.desafio_quality.exception.DistrictNotFoundException;
+import com.example.desafio_quality.exception.RoomNotFoundException;
+import com.example.desafio_quality.mock.ImmobileDtoMock;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ImmobileTest {
 
@@ -102,4 +106,19 @@ class ImmobileTest {
         assertThat(newImmobileTest.getMaxRoom()).isEqualTo(maxRoomTest);
     }
 
+    @Test
+    void getTotalValuePerRoom_returnRoom_whenRoomExist() {
+        Room roomFound = this.immobile.getTotalValuePerRoom("Quarto");
+
+        assertThat(roomFound.getSquareMeter()).isEqualTo(4);
+    }
+
+    @Test
+    void getTotalValuePerRoom_throwException_whenRoomNotExist() {
+        RoomNotFoundException exception = assertThrows(RoomNotFoundException.class, () -> {
+            this.immobile.getTotalValuePerRoom("Não existe");
+        });
+
+        assertThat(exception.getMessage()).isEqualTo("Esse cômodo não foi encontrado.");
+    }
 }

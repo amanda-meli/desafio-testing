@@ -17,7 +17,6 @@ class RoomTest {
         room.setWidth(4);
         Assertions.assertEquals(room.getWidth(), 4);
         Assertions.assertEquals(room.getSquareMeter(), room.getWidth() * room.getLength());
-
     }
 
     @Test

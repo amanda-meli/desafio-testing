@@ -29,7 +29,6 @@ public class ImmobileDtoMock {
         immobileDTO.setListOfRooms(rooms);
         immobileDTO.setDistrict("São jose");
         immobileDTO.setPropName("Minha casa");
-
     }
 
     public static District getByName(String name) {
@@ -44,5 +43,17 @@ public class ImmobileDtoMock {
         return 130;
     }
 
+    public static ImmobileDTO getDistrictNotFound() {
+        ImmobileDTO immobile = new ImmobileDTO();
 
+        ArrayList<Room> rooms = new ArrayList<>();
+        rooms.add(new Room(0, "Quarto", 2, 2));
+        rooms.add(new Room(0, "Quarto1", 3, 3));
+
+        immobile.setListOfRooms(rooms);
+        immobile.setDistrict("Bairrinho");
+        immobile.setPropName("Minha casa");
+
+        return immobile;
+    }
 }
