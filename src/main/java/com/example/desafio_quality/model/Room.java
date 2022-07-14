@@ -12,6 +12,7 @@ public class Room {
     private int id;
 
     @Getter
+    @Setter
     @NotBlank(message = "O nome do comodo é obrigatorio")
     @Pattern(regexp = "([AZ]|[0-9])[\\s|[0-9]|AZ|az|ñ|ó|í|á|é|ú|Á|Ó|É| Í|Ú]*$",
             message = "O nome do comodo deve começar com letra maiúscula.")
@@ -19,11 +20,13 @@ public class Room {
     private String roomName;
 
     @Getter
+    @Setter
     @NotBlank(message = "Campo largura é obrigatório")
     @Max(value = 25, message = "Largura máxima permitida de 25 metros.")
     private double width;
 
     @Getter
+    @Setter
     @NotBlank
     @Max(value = 33, message = "Comprimento máximo permitida de 33 metros.")
     private double length;
