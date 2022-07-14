@@ -1,4 +1,4 @@
-package mock;
+package com.example.desafio_quality.mock;
 
 import com.example.desafio_quality.model.District;
 
