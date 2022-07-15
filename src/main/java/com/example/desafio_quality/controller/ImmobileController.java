@@ -20,6 +20,7 @@ public class ImmobileController {
     @GetMapping()
     public ResponseEntity<Immobile> getImmobile(@RequestBody @Valid ImmobileDTO immobileDTO){
         return new ResponseEntity<>(service.calculateValues(immobileDTO), HttpStatus.OK);
+
     }
 
     //public ResponseEntity<> regra 0001
