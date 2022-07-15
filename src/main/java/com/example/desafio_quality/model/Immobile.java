@@ -57,7 +57,6 @@ public class Immobile {
                 return r;
             }
         }
-
         throw new RoomNotFoundException("Esse cômodo não foi encontrado.");
     }
 
