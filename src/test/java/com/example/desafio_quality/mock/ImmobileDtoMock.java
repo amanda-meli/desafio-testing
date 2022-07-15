@@ -35,6 +35,9 @@ public class ImmobileDtoMock {
     public static District getByName(String name) {
         return new District(name, 10);
     }
+    public static ImmobileDTO getImmobileDistrictNotFound() {
+        return new ImmobileDTO("Casa Dois Andares", "Ribeirão do Lipa", new ArrayList<Room>());
+    }
 
     public static double getTotalArea() {
         return 13;
