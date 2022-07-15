@@ -31,6 +31,7 @@ public class ImmobileDtoMock {
         immobileDTO.setPropName("Minha casa");
     }
 
+
     public static District getByName(String name) {
         return new District(name, 10);
     }
