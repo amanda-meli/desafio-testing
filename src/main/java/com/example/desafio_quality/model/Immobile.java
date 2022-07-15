@@ -9,6 +9,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
 
+@NoArgsConstructor
 public class Immobile {
     //Adicionar as validações
 
@@ -57,7 +58,6 @@ public class Immobile {
                 return r;
             }
         }
-
         throw new RoomNotFoundException("Esse cômodo não foi encontrado.");
     }
 

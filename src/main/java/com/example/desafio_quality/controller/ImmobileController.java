@@ -11,18 +11,16 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/immobile/")
+@RequestMapping("/immobile")
 public class ImmobileController {
 
     @Autowired
     IServiceImmobile service;
 
-    @GetMapping()
+    @PostMapping
     public ResponseEntity<Immobile> getImmobile(@RequestBody @Valid ImmobileDTO immobileDTO){
         return new ResponseEntity<>(service.calculateValues(immobileDTO), HttpStatus.OK);
 
     }
-
-    //public ResponseEntity<> regra 0001
 
 }

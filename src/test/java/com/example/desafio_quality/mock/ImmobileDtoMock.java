@@ -27,13 +27,16 @@ public class ImmobileDtoMock {
         rooms.add(maxRoom);
 
         immobileDTO.setListOfRooms(rooms);
-        immobileDTO.setDistrict("São jose");
+        immobileDTO.setDistrict("Sao jose");
         immobileDTO.setPropName("Minha casa");
     }
 
 
     public static District getByName(String name) {
         return new District(name, 10);
+    }
+    public static ImmobileDTO getImmobileDistrictNotFound() {
+        return new ImmobileDTO("Casa Dois Andares", "Ribeirão do Lipa", new ArrayList<Room>());
     }
 
     public static double getTotalArea() {
