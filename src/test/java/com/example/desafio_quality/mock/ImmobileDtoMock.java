@@ -27,7 +27,7 @@ public class ImmobileDtoMock {
         rooms.add(maxRoom);
 
         immobileDTO.setListOfRooms(rooms);
-        immobileDTO.setDistrict("São jose");
+        immobileDTO.setDistrict("Sao jose");
         immobileDTO.setPropName("Minha casa");
     }
 

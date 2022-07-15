@@ -17,7 +17,7 @@ public class ImmobileController {
     @Autowired
     IServiceImmobile service;
 
-    @GetMapping()
+    @PostMapping
     public ResponseEntity<Immobile> getImmobile(@RequestBody @Valid ImmobileDTO immobileDTO){
         return new ResponseEntity<>(service.calculateValues(immobileDTO), HttpStatus.OK);
 
