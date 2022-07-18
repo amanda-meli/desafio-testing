@@ -9,6 +9,9 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
+/***
+ * Classe responsável por serealizar os dados de input em nossa API
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

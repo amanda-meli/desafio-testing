@@ -6,6 +6,9 @@ import com.example.desafio_quality.model.District;
 import java.util.HashMap;
 import java.util.Map;
 
+/***
+ * criar um mock que retorna sempre os mesmos bairros (igual a classe normal)
+ */
 public class DistrictRepoMock {
 
     private Map<String, District> allDistricts;

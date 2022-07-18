@@ -7,7 +7,9 @@ import lombok.Getter;
 
 import java.util.ArrayList;
 
-
+/***
+ * Classe responsável por criar um mock da classe immobleDTo e classes agregadas
+ */
 public class ImmobileDtoMock {
 
     @Getter
@@ -17,6 +19,9 @@ public class ImmobileDtoMock {
     private Room maxRoom;
 
 
+    /***
+     * Construtor responsável por instanciar os atributos mocados
+     */
     public ImmobileDtoMock() {
 
         this.immobileDTO = new ImmobileDTO();
@@ -31,22 +36,43 @@ public class ImmobileDtoMock {
         immobileDTO.setPropName("Minha casa");
     }
 
-
+    /***
+     * Retornar um bairro com o nome do parametro
+     * @param name nome do bairro
+     * @return bairro
+     */
     public static District getByName(String name) {
         return new District(name, 10);
     }
+
+    /***
+     * Retorna uma casa nova
+     * @return
+     */
     public static ImmobileDTO getImmobileDistrictNotFound() {
         return new ImmobileDTO("Casa Dois Andares", "Ribeirão do Lipa", new ArrayList<Room>());
     }
 
+    /***
+     * simula a area da casa
+     * @return valor
+     */
     public static double getTotalArea() {
         return 13;
     }
 
+    /***
+     * simula o valor da casa
+     * @return valor
+     */
     public static double getTotalValue() {
         return 130;
     }
 
+    /***
+     * Para um casa em um bairro que não existe
+     * @return bairro
+     */
     public static ImmobileDTO getDistrictNotFound() {
         ImmobileDTO immobile = new ImmobileDTO();
 

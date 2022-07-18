@@ -4,6 +4,9 @@ import lombok.*;
 
 import javax.validation.constraints.*;
 
+/***
+ * Classe responsável por mapear os comodas da casa
+ */
 @NoArgsConstructor
 public class Room {
 
@@ -34,18 +37,33 @@ public class Room {
     @Getter
     private double squareMeter;
 
+    /***
+     * Reponsável por setar uma largura do comodo e consequentemente o metro quadrado
+     * @param width nova largura
+     */
     public void setWidth(double width) {
         this.width = width;
 
         this.squareMeter = getWidth() * getLength();
     }
 
+    /***
+     * Reponsável por setar um comprimento do comodo e consequentemente o metro quadrado
+     * @param length novo comprimento
+     */
     public void setLength(double length) {
         this.length = length;
 
         this.squareMeter = getWidth() * getLength();
     }
 
+    /***
+     * Construtor personalidado contendo apenas as informações importantes
+     * @param id identificador
+     * @param roomName nome do comodo
+     * @param width largura
+     * @param length comprimento
+     */
     public Room(int id, String roomName, double width, double length) {
         this.id = id;
         this.roomName = roomName;

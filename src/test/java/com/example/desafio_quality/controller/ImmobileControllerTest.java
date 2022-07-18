@@ -27,6 +27,9 @@ import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness =  Strictness.LENIENT)
 
+/***
+ * Testes unitários da camada de controle
+ */
 class ImmobileControllerTest {
 
     @InjectMocks
@@ -35,6 +38,9 @@ class ImmobileControllerTest {
     @Mock
     IServiceImmobile immobileService;
 
+    /***
+     * verifica se o controle está respondendo as chamada na api corretamente
+     */
     @Test
     void getImmobile() {
 

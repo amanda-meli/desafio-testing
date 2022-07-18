@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 import java.util.HashMap;
 import java.util.Map;
 
+/***
+ * Classe responsável por simular um classe de acesso ao banco de dados contendo dados mocados
+ */
 @Repository
 public class DistrictRepo {
 

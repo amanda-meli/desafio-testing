@@ -4,8 +4,6 @@ import com.example.desafio_quality.exception.DistrictNotFoundException;
 import com.example.desafio_quality.model.Immobile;
 import com.example.desafio_quality.repository.DistrictRepo;
 import com.example.desafio_quality.mock.ImmobileDtoMock;
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.*;
@@ -18,7 +16,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.verify;
 
-
+/***
+ * Teste unitários da classe que implementa a interface base
+ */
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
 class ServiceImmobileTest {
@@ -29,6 +29,9 @@ class ServiceImmobileTest {
    @Mock
     DistrictRepo repo;
 
+    /***
+     * testa a funcao que calcula os valores e dimensões da casa
+     */
     @Test
     void calculateValues_returnTotals_whenDistrictExist() {
         BDDMockito.when(repo.getByName(ArgumentMatchers.any(String.class)))
@@ -45,6 +48,9 @@ class ServiceImmobileTest {
         verify(repo, atLeastOnce()).getByName(mock.getImmobileDTO().getDistrict());
     }
 
+    /***
+     * testa a funcao que calcula os valores e dimensões da casa passando um bairro que não existe na base de dados
+     */
     @Test
     void calculateValues_throwException_whenDistrictNotFound() {
         DistrictNotFoundException exception = assertThrows(DistrictNotFoundException.class, () -> {

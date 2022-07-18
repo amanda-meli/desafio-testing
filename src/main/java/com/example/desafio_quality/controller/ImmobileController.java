@@ -17,6 +17,11 @@ public class ImmobileController {
     @Autowired
     IServiceImmobile service;
 
+    /***
+     * Função responsável por criar o end-point onde erá acontecer o calculo
+     * @param immobileDTO dados do imóvel para que calcular
+     * @return imovel por completo com todos os valores e dimensões calculadas
+     */
     @PostMapping
     public ResponseEntity<Immobile> getImmobile(@RequestBody @Valid ImmobileDTO immobileDTO){
         return new ResponseEntity<>(service.calculateValues(immobileDTO), HttpStatus.OK);

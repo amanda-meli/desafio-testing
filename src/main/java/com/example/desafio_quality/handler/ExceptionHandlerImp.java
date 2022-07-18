@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class ExceptionHandlerImp {
 
+    /***
+     * Controlador da exceção DistrictNotFoundException
+     * @param ex uma exceça lançado no throw
+     * @return um response entity para o client conectado na api
+     */
     @ExceptionHandler(DistrictNotFoundException.class)
     ResponseEntity<ExceptionsDetails> districtNotFound(DistrictNotFoundException ex) {
         return new ResponseEntity<>(ExceptionsDetails.builder()
@@ -19,6 +24,11 @@ public class ExceptionHandlerImp {
                 .build(), HttpStatus.NOT_FOUND);
     }
 
+    /***
+     * Controlador da exceção RoomNotFoundException
+     * @param ex uma exceça lançado no throw
+     * @return um response entity para o client conectado na api
+     */
     @ExceptionHandler(RoomNotFoundException.class)
     ResponseEntity<ExceptionsDetails> roomNotFound(RoomNotFoundException ex) {
         return new ResponseEntity<>(ExceptionsDetails.builder()

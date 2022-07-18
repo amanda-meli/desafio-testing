@@ -20,6 +20,9 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 
+/***
+ * Teste de intregação da api
+ */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ImmobileIntegrationTest {
 
@@ -30,6 +33,9 @@ public class ImmobileIntegrationTest {
     TestRestTemplate testRestTemplate;
 
 
+    /***
+     * Fluxo normal da api
+     */
     @Test
     public void getImmobile(){
         String baseUrl = "http://localhost:" + port + "/immobile";
@@ -49,6 +55,9 @@ public class ImmobileIntegrationTest {
         Assertions.assertThat(response.getBody().getPropName()).isEqualTo(immobileDTO.getPropName());
     }
 
+    /***
+     * Caso a api tenha que retornar uma exceção
+     */
     @Test
     public void getImovel_returnStatusNotFound(){
         String baseUrl = "http://localhost:" + port + "/immobile";
